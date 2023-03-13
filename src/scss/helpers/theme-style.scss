@@ -1,0 +1,27 @@
+main {
+  &.dark-theme {
+    background-color: var(--vry-dark-blue);
+    color: var(--light-grayish-blue);
+  }
+
+  &.light-theme {
+    background-color: var(--vry-light-gray);
+    color: var(--vry-dark-grayish-blue);
+  }
+}
+
+.dark-theme {
+  .todo-app {
+    &__header {
+      background-image: url(https://ik.imagekit.io/csdesigner/todo_app/bg-desktop-dark_dyPkTAQsE.jpg?updatedAt=1678693698886);
+    }
+  }
+}
+
+.light-theme {
+  .todo-app {
+    &__header {
+      background-image: url(https://ik.imagekit.io/csdesigner/todo_app/bg-desktop-light_8zzFtKjqvG.jpg?updatedAt=1678693698821);
+    }
+  }
+}

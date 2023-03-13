@@ -1,0 +1,59 @@
+.todo-app__container {
+  position: relative;
+  top: -160px;
+
+  &-holder {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+
+    .create-todo-form {
+      background-color: var(--vry-dark-desaturated-blue);
+      padding: 20px 25px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+
+      button {
+        width: 23px;
+        height: 23px;
+        border: 1px solid #777A92;
+        background: transparent;
+        border-radius: 50px;
+        margin-bottom: 3px;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--gradient-color);
+          border: 0;
+        }
+      }
+
+      input {
+        background: transparent;
+        font-size: 20px;
+        outline: 0;
+        border: 0;
+        color: inherit;
+        margin-left: 15px;
+        font-family: "Josefin Sans", sans-serif;
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: inherit;
+          opacity: 0.5;
+          font-weight: 400;
+        }
+        
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: inherit;
+          opacity: 0.5;
+        }
+        
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: inherit;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
