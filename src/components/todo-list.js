@@ -21,6 +21,13 @@ const TodoList = () => {
     });
   };
 
+  const onDeleteTodo = (id) => {
+    dispatch({
+      type: "deleteTodo",
+      id: id,
+    });
+  };
+
   return (
     <div className="todo-app-list">
       {todoList.map((todo) => {
@@ -39,6 +46,17 @@ const TodoList = () => {
               )}
               <span className="checkmark"></span>
             </label>
+            <button
+              className="todo-delete"
+              type="button"
+              aria-label="delete-todo"
+              onClick={() => onDeleteTodo(todo.id)}
+            >
+              <img
+                src="https://ik.imagekit.io/csdesigner/todo_app/icon-cross_STxqc-bBC.svg?updatedAt=1678693698788"
+                alt="delete-icon"
+              />
+            </button>
           </div>
         );
       })}

@@ -6,7 +6,8 @@
       box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.1);
 
       .todo-item {
-        padding: 20px 25px 18px;
+        padding: 20px 40px 18px 20px;
+        position: relative;
 
         .todo-check {
           position: relative;
@@ -37,7 +38,7 @@
             width: 0;
 
             &:checked ~ .checkmark {
-              background: var(--gradient-color) !important;
+              background: var(--gradient-color);
             }
 
             &:checked ~ .checkmark:after {
@@ -68,6 +69,38 @@
               position: absolute;
               display: none;
             }
+          }
+
+          &:hover {
+            .checkmark {
+              background: var(--gradient-color);
+  
+              &:after {
+                display: block;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .todo-delete {
+            display: block;
+          }
+        }
+
+        .todo-delete {
+          background: transparent;
+          border: 0;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          display: none;
+
+          img {
+            width: 15px;
+            filter: brightness(100%);
           }
         }
 

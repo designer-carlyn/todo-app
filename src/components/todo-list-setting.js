@@ -16,12 +16,12 @@ const TodoListSetting = () => {
         <small>{todoListCount} Iteme(s) Left</small>
       </div>
       <div className="todo-filter">
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <button type="button">All</button>
+        <button type="button">Active</button>
+        <button type="button">Completed</button>
       </div>
       <div className="todo-clear">
-        <button>Clear Completed</button>
+        <button type="button">Clear Completed</button>
       </div>
     </div>
   );
