@@ -20,6 +20,14 @@ main {
       .create-todo-form {
         background-color: var(--vry-dark-desaturated-blue);
       }
+
+      .todo-app-list {
+        background-color: var(--vry-dark-desaturated-blue);
+
+        .todo-item {
+          border-bottom: 1px solid var(--vry-dark-grayish-blue);
+        }
+      }
     }
     
   }
@@ -34,6 +42,14 @@ main {
     &__container-holder {
       .create-todo-form {
         background-color: var(--c-white);
+      }
+
+      .todo-app-list {
+        background-color: var(--c-white);
+        
+        .todo-item {
+          border-bottom: 1px solid var(--vry-light-grayish-blue);
+        }
       }
     }
   }

@@ -28,21 +28,19 @@ const CreateTodo = () => {
   };
 
   return (
-    <div>
-      <form className="create-todo-form" onSubmit={createTodo}>
-        <button
-          type="button"
-          aria-label="save-todo"
-          onClick={createTodo}
-        ></button>
-        <input
-          id="input-new-todo"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Create a new todo..."
-        />
-      </form>
-    </div>
+    <form className="create-todo-form" onSubmit={createTodo}>
+      <button
+        type="button"
+        aria-label="save-todo"
+        onClick={createTodo}
+      ></button>
+      <input
+        id="input-new-todo"
+        onChange={handleInputChange}
+        type="text"
+        placeholder="Create a new todo..."
+      />
+    </form>
   );
 };
 

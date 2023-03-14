@@ -6,6 +6,7 @@ import {
 // import initialValue from "../content/todo-iniatal-value.json";
 
 import CreateTodo from "../components/create-todo";
+import TodoList from "../components/todo-list";
 
 import "../scss/layout/todo-container.scss";
 
@@ -19,6 +20,7 @@ const TodoContainer = () => {
           <CreateTodoContext.Provider value={newTodo}>
             <DispatchTodoContext.Provider value={dispatch}>
               <CreateTodo />
+              <TodoList />
             </DispatchTodoContext.Provider>
           </CreateTodoContext.Provider>
         </div>
@@ -38,6 +40,15 @@ function todoReducer(newTodo, action) {
           completed: false,
         },
       ];
+    }
+    case "completed": {
+      return newTodo.map((todo) => {
+        if (todo.id === action.todo.id) {
+          return action.todo;
+        } else {
+          return todo;
+        }
+      });
     }
     default: {
       throw Error("Unknown action: " + action.type);
