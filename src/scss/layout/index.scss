@@ -10,7 +10,8 @@ body {
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  padding-bottom: 50px;
 }
 
 a {
