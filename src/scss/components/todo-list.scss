@@ -109,11 +109,10 @@
         }
       }
     }
+    
     .todo-list-setting {
       padding: 20px 25px 18px;
       border-radius: 0 0 5px 5px;
-      background-color: var(--vry-dark-desaturated-blue);
-      border-top: 1px solid var(--vry-dark-grayish-blue);
       display: grid;
       grid-template-columns: auto 1fr auto;
       box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.1);
@@ -147,12 +146,8 @@
         font-family: "Josefin Sans", sans-serif;
         font-size: 15px;
 
-        &:hover {
-          color: var(--c-white);
-        }
-
         &.active {
-          color: var(--primary-color);
+          color: var(--primary-color) !important;
         }
       }
     }
