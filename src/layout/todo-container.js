@@ -53,8 +53,10 @@ function todoReducer(newTodo, action) {
       });
     }
     case "deleteTodo": {
-      console.log(action.type);
       return newTodo.filter((todo) => todo.id !== action.id);
+    }
+    case "clearCompleted": {
+      return newTodo.filter((todo) => todo.completed === action.completed);
     }
     default: {
       throw Error("Unknown action: " + action.type);
