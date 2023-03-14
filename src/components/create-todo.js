@@ -2,12 +2,18 @@ import React, { useContext } from "react";
 import { CreateTodoContext } from "../context/create-todo-context";
 
 const CreateTodo = () => {
-  const { todoList, setTodoList } = useContext(CreateTodoContext);
-
-  console.log(todoList);
+  const [todoList, setTodoList] = useContext(CreateTodoContext);
 
   const createTodo = (event) => {
     event.preventDefault();
+    setTodoList([
+      ...todoList,
+      {
+        id: 3,
+        title: "ADD TEST",
+        completed: false,
+      },
+    ]);
   };
 
   const handleInputChange = (event) => {
@@ -17,9 +23,9 @@ const CreateTodo = () => {
 
   return (
     <div>
-      {/* {todoList.map((item, index) => {
+      {todoList.map((item, index) => {
         return <p key={index}>{item.title}</p>;
-      })} */}
+      })}
       <form className="create-todo-form">
         <button
           onClick={createTodo}
