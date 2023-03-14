@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { DispatchTodoContext } from "../context/create-todo-context";
 import { uid } from "uid";
 
+import "../scss/components/create-todo.scss";
+
 const CreateTodo = () => {
   const dispatch = useContext(DispatchTodoContext);
 

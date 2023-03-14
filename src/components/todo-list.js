@@ -4,6 +4,8 @@ import {
   DispatchTodoContext,
 } from "../context/create-todo-context";
 
+import "../scss/components/todo-list.scss";
+
 const TodoList = () => {
   const todoList = useContext(CreateTodoContext);
   const dispatch = useContext(DispatchTodoContext);
@@ -27,6 +29,7 @@ const TodoList = () => {
             <label className="todo-check">
               <input
                 type="checkbox"
+                checked={todo.completed}
                 onChange={(event) => onChangeCompleted(event, todo)}
               />
               {todo.completed === true ? (

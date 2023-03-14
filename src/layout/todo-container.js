@@ -3,15 +3,16 @@ import {
   CreateTodoContext,
   DispatchTodoContext,
 } from "../context/create-todo-context";
-// import initialValue from "../content/todo-iniatal-value.json";
+import initialValue from "../content/todo-iniatal-value.json";
 
 import CreateTodo from "../components/create-todo";
 import TodoList from "../components/todo-list";
+import TodoListSetting from "../components/todo-list-setting";
 
 import "../scss/layout/todo-container.scss";
 
 const TodoContainer = () => {
-  const [newTodo, dispatch] = useReducer(todoReducer, []);
+  const [newTodo, dispatch] = useReducer(todoReducer, initialValue);
 
   return (
     <div className="todo-app__container">
@@ -21,6 +22,7 @@ const TodoContainer = () => {
             <DispatchTodoContext.Provider value={dispatch}>
               <CreateTodo />
               <TodoList />
+              <TodoListSetting />
             </DispatchTodoContext.Provider>
           </CreateTodoContext.Provider>
         </div>

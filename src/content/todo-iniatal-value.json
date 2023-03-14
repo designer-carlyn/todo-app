@@ -1,4 +1,8 @@
 [
-  { "id": 1, "title": "Wake up", "completed": false },
-  { "id": 2, "title": "Eat", "completed": false }
+  { "id": 0, "title": "Complete online Javascript course", "completed": true },
+  { "id": 1, "title": "Jog around the par 3x", "completed": false },
+  { "id": 2, "title": "10 minutes meditation", "completed": false },
+  { "id": 3, "title": "Read for 1 hour", "completed": false },
+  { "id": 4, "title": "Pick up groceries", "completed": false },
+  { "id": 5, "title": "Complete Todo App on Frontend Mentor", "completed": false }
 ]
