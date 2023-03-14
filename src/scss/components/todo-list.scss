@@ -2,7 +2,7 @@
   &-holder {
     .todo-app-list {
       margin-top: 20px;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.1);
 
       .todo-item {
@@ -20,6 +20,13 @@
 
           s {
             opacity: 0.5;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          span {
+            text-overflow: ellipsis;
+            overflow: hidden;
           }
 
           input {
