@@ -30,7 +30,7 @@ const CreateTodo = () => {
   };
 
   return (
-    <form className="create-todo-form" onSubmit={createTodo} autocomplete="off">
+    <form className="create-todo-form" onSubmit={createTodo} autoComplete="off">
       <button
         type="button"
         aria-label="save-todo"
