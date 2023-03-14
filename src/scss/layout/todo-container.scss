@@ -8,19 +8,18 @@
     margin: auto;
 
     .create-todo-form {
-      background-color: var(--vry-dark-desaturated-blue);
-      padding: 20px 25px;
+      padding: 20px 25px 18px;
       border-radius: 5px;
       display: flex;
       align-items: center;
 
       button {
-        width: 23px;
+        width: 25px;
         height: 23px;
         border: 1px solid #777A92;
         background: transparent;
         border-radius: 50px;
-        margin-bottom: 3px;
+        margin-bottom: 4px;
         cursor: pointer;
 
         &:hover {
@@ -35,8 +34,9 @@
         outline: 0;
         border: 0;
         color: inherit;
-        margin-left: 15px;
+        margin-left: 20px;
         font-family: "Josefin Sans", sans-serif;
+        width: 100%;
 
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: inherit;

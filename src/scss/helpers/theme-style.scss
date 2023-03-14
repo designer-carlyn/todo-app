@@ -15,6 +15,13 @@ main {
     &__header {
       background-image: url(https://ik.imagekit.io/csdesigner/todo_app/bg-desktop-dark_dyPkTAQsE.jpg?updatedAt=1678693698886);
     }
+
+    &__container-holder {
+      .create-todo-form {
+        background-color: var(--vry-dark-desaturated-blue);
+      }
+    }
+    
   }
 }
 
@@ -22,6 +29,12 @@ main {
   .todo-app {
     &__header {
       background-image: url(https://ik.imagekit.io/csdesigner/todo_app/bg-desktop-light_8zzFtKjqvG.jpg?updatedAt=1678693698821);
+    }
+
+    &__container-holder {
+      .create-todo-form {
+        background-color: var(--c-white);
+      }
     }
   }
 }

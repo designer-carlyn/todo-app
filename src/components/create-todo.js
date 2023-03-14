@@ -1,38 +1,42 @@
-import React, { useContext } from "react";
-import { CreateTodoContext } from "../context/create-todo-context";
+import React, { useState, useContext } from "react";
+import { DispatchTodoContext } from "../context/create-todo-context";
+import { uid } from "uid";
 
 const CreateTodo = () => {
-  const [todoList, setTodoList] = useContext(CreateTodoContext);
+  const dispatch = useContext(DispatchTodoContext);
 
-  const createTodo = (event) => {
+  const [newTodo, setNewTodo] = useState("");
+
+  function createTodo(event) {
     event.preventDefault();
-    setTodoList([
-      ...todoList,
-      {
-        id: 3,
-        title: "ADD TEST",
-        completed: false,
-      },
-    ]);
-  };
+    if (newTodo !== "") {
+      dispatch({
+        type: "addTodo",
+        id: uid(),
+        title: newTodo,
+      });
+      setNewTodo("");
+      document.getElementById("input-new-todo").value = "";
+    } else {
+      alert(Error("Please fill out the form"));
+    }
+  }
 
   const handleInputChange = (event) => {
     let value = event.target.value;
-    console.log(value);
+    setNewTodo(value);
   };
 
   return (
     <div>
-      {todoList.map((item, index) => {
-        return <p key={index}>{item.title}</p>;
-      })}
-      <form className="create-todo-form">
+      <form className="create-todo-form" onSubmit={createTodo}>
         <button
-          onClick={createTodo}
           type="button"
           aria-label="save-todo"
+          onClick={createTodo}
         ></button>
         <input
+          id="input-new-todo"
           onChange={handleInputChange}
           type="text"
           placeholder="Create a new todo..."
