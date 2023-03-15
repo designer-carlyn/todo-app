@@ -18,6 +18,7 @@
           padding-left: 42px;
           display: flex;
           align-items: center;
+          white-space: nowrap;
 
           s {
             opacity: 0.5;
@@ -148,6 +149,42 @@
 
         &.active {
           color: var(--primary-color) !important;
+        }
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      .todo-app-list {
+        .todo-item {
+          padding: 20px 30px 18px 15px;
+
+          .todo-check {
+            font-size: 14px;
+          }
+
+          .todo-delete {
+            display: block;
+            right: 15px;
+
+            img {
+              width: 10px;
+            }
+          }
+        }
+      }
+
+      .todo-list-setting {
+        position: relative;
+        padding: 20px 15px 18px;
+
+        .todo-filter {
+          position: absolute;
+          bottom: -70px;
+          width: calc(100% - 30px);
+          border-radius: 5px;
+          justify-content: center;
+          padding: 20px 15px 17px;
+          background-color: #25273C;
         }
       }
     }

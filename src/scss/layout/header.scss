@@ -31,4 +31,8 @@
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    min-height: 270px;
+  }
 }
