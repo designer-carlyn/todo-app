@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/password-generator-with-reactjs-dNP6gqOmFw)
-- Live Site URL: [Live site URL](https://cs-password-generator.netlify.app/)
+- Live Site URL: [Live site URL](https://cs-todo-app.netlify.app/)
 
 ### Built with
 
