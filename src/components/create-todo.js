@@ -31,11 +31,7 @@ const CreateTodo = () => {
 
   return (
     <form className="create-todo-form" onSubmit={createTodo} autoComplete="off">
-      <button
-        type="button"
-        aria-label="save-todo"
-        onClick={createTodo}
-      ></button>
+      <button aria-label="save-todo" onClick={createTodo}></button>
       <input
         id="input-new-todo"
         onChange={handleInputChange}

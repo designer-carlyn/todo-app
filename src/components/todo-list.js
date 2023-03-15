@@ -124,8 +124,6 @@ const TodoList = () => {
                         </label>
                         <button
                           className="todo-delete"
-                          type="button"
-                          aria-label="delete-todo"
                           onClick={() => onDeleteTodo(todo.id)}
                         >
                           <img
@@ -150,30 +148,25 @@ const TodoList = () => {
         <div className="todo-filter">
           <button
             className={filterValue === "All" ? "active" : ""}
-            type="button"
             onClick={() => setFilterValue("All")}
           >
             All
           </button>
           <button
             className={filterValue === "Active" ? "active" : ""}
-            type="button"
             onClick={() => setFilterValue("Active")}
           >
             Active
           </button>
           <button
             className={filterValue === "Completed" ? "active" : ""}
-            type="button"
             onClick={() => setFilterValue("Completed")}
           >
             Completed
           </button>
         </div>
         <div className="todo-clear">
-          <button type="button" onClick={onClearCompleted}>
-            Clear Completed
-          </button>
+          <button onClick={onClearCompleted}>Clear Completed</button>
         </div>
       </div>
       <div className="todo-list-footer">
