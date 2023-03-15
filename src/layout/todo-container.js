@@ -56,6 +56,9 @@ function todoReducer(newTodo, action) {
     case "clearCompleted": {
       return newTodo.filter((todo) => todo.completed === action.completed);
     }
+    case "reOrder": {
+      return action.todo;
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }

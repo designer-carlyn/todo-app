@@ -3,6 +3,7 @@ import {
   CreateTodoContext,
   DispatchTodoContext,
 } from "../context/create-todo-context";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import "../scss/components/todo-list.scss";
 
@@ -24,6 +25,14 @@ const TodoList = () => {
       return todo;
     }
   });
+
+  const reorder = (todoList, startIndex, endIndex) => {
+    const updatedTodo = Array.from(todoList);
+    const [removed] = updatedTodo.splice(startIndex, 1);
+    updatedTodo.splice(endIndex, 0, removed);
+
+    return updatedTodo;
+  };
 
   const onChangeCompleted = (event, todo) => {
     let isCheck = event.target.checked;
@@ -50,40 +59,90 @@ const TodoList = () => {
     });
   };
 
+  function onDragEnd(result) {
+    if (!result.destination) {
+      return;
+    }
+
+    const items = reorder(
+      todoList,
+      result.source.index,
+      result.destination.index
+    );
+
+    dispatch({
+      type: "reOrder",
+      todo: items,
+    });
+  }
+
+  const getItemStyle = (draggableStyle, isDragging) => ({
+    // change background colour if dragging
+    backgroundColor: isDragging ? "rgba(0,0,0,0.1)" : "",
+    borderBottom: isDragging ? "none" : "",
+
+    // styles we need to apply on draggables
+    ...draggableStyle,
+  });
+
   return (
-    <>
-      <div className="todo-app-list">
-        {filteredTodoList.map((todo) => {
-          return (
-            <div className="todo-item" key={todo.id}>
-              <label className="todo-check">
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={(event) => onChangeCompleted(event, todo)}
-                />
-                {todo.completed === true ? (
-                  <s>{todo.title}</s>
-                ) : (
-                  <span>{todo.title}</span>
-                )}
-                <span className="checkmark"></span>
-              </label>
-              <button
-                className="todo-delete"
-                type="button"
-                aria-label="delete-todo"
-                onClick={() => onDeleteTodo(todo.id)}
-              >
-                <img
-                  src="https://ik.imagekit.io/csdesigner/todo_app/icon-cross_STxqc-bBC.svg?updatedAt=1678693698788"
-                  alt="delete-icon"
-                />
-              </button>
+    <div>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="droppable">
+          {(provided) => (
+            <div
+              className="todo-app-list"
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
+              {filteredTodoList.map((todo, index) => {
+                return (
+                  <Draggable key={todo.id} draggableId={todo.id} index={index}>
+                    {(provided, snapshot) => (
+                      <div
+                        className="todo-item"
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                        style={getItemStyle(
+                          provided.draggableProps.style,
+                          snapshot.isDragging
+                        )}
+                      >
+                        <label className="todo-check">
+                          <input
+                            type="checkbox"
+                            checked={todo.completed}
+                            onChange={(event) => onChangeCompleted(event, todo)}
+                          />
+                          {todo.completed === true ? (
+                            <s>{todo.title}</s>
+                          ) : (
+                            <span>{todo.title}</span>
+                          )}
+                          <span className="checkmark"></span>
+                        </label>
+                        <button
+                          className="todo-delete"
+                          type="button"
+                          aria-label="delete-todo"
+                          onClick={() => onDeleteTodo(todo.id)}
+                        >
+                          <img
+                            src="https://ik.imagekit.io/csdesigner/todo_app/icon-cross_STxqc-bBC.svg?updatedAt=1678693698788"
+                            alt="delete-icon"
+                          />
+                        </button>
+                      </div>
+                    )}
+                  </Draggable>
+                );
+              })}
+              {provided.placeholder}
             </div>
-          );
-        })}
-      </div>
+          )}
+        </Droppable>
+      </DragDropContext>
       <div className="todo-list-setting">
         <div className="todo-count">
           <small>{todoListCount} Iteme(s) Left</small>
@@ -117,7 +176,7 @@ const TodoList = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
