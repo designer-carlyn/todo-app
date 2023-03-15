@@ -86,7 +86,7 @@ const TodoList = () => {
   });
 
   return (
-    <div>
+    <>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable">
           {(provided) => (
@@ -176,7 +176,10 @@ const TodoList = () => {
           </button>
         </div>
       </div>
-    </div>
+      <div className="todo-list-footer">
+        <p>Drag and drop to reorder list</p>
+      </div>
+    </>
   );
 };
 

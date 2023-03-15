@@ -1,7 +1,7 @@
 main {
   &.dark-theme {
     background-color: var(--vry-dark-blue);
-    color: var(--light-grayish-blue);
+    color: var(--dark-grayish-blue);
   }
 
   &.light-theme {
@@ -26,6 +26,7 @@ main {
 
         .todo-item {
           border-bottom: 1px solid var(--vry-dark-grayish-blue);
+          color: var(--light-grayish-blue);
         }
       }
 
@@ -36,6 +37,13 @@ main {
         button {
           &:hover {
             color: var(--c-white);
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .todo-filter {
+            background-color: var(--vry-dark-desaturated-blue);
+            box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.1);
           }
         }
       }
@@ -72,6 +80,26 @@ main {
 
           &:hover {
             color: var(--vry-dark-grayish-blue);
+          }
+        }
+      }
+
+      .todo-list-setting {
+        background-color: var(--c-white);
+        border-top: 1px solid var(--vry-light-grayish-blue);
+
+        button {
+          color: var(--dark-grayish-blue);
+
+          &:hover {
+            color: var(--vry-dark-grayish-blue);
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .todo-filter {
+            background-color: var(--c-white);
+            box-shadow: 0px 0px 34px -4px rgba(0,0,0,0.1);
           }
         }
       }

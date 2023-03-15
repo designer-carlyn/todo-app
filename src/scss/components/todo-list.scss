@@ -153,6 +153,13 @@
       }
     }
 
+    .todo-list-footer {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 80px;
+      color: var(--dark-grayish-blue);
+    }
+
     @media screen and (max-width:600px) {
       .todo-app-list {
         .todo-item {
@@ -184,8 +191,12 @@
           border-radius: 5px;
           justify-content: center;
           padding: 20px 15px 17px;
-          background-color: #25273C;
         }
+      }
+
+      .todo-list-footer {
+        font-size: 16px;
+        margin-top: 120px;
       }
     }
   }
