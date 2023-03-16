@@ -26,8 +26,9 @@ export default IndexPage;
 
 export const Head = () => (
   <>
-    <title>Todo App</title>
-    <meta property="og:title" content="Todo App" />
+    <title>To Do App</title>
+    <meta property="og:title" content="To Do App" />
+    <meta property="og:type" content="website" />
     <meta
       property="og:description"
       content="Create your own list of ongoing tasks for the day."
