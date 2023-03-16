@@ -30,6 +30,10 @@ main {
         }
       }
 
+      .todo-list-placeholder {
+        background-color: var(--vry-dark-desaturated-blue);
+      }
+
       .todo-list-setting {
         background-color: var(--vry-dark-desaturated-blue);
         border-top: 1px solid var(--vry-dark-grayish-blue);
@@ -69,6 +73,10 @@ main {
         .todo-item {
           border-bottom: 1px solid var(--vry-light-grayish-blue);
         }
+      }
+
+      .todo-list-placeholder {
+        background-color: var(--c-white);
       }
 
       .todo-list-setting {

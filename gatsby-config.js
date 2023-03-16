@@ -4,7 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `Todo App`,
-    siteUrl: `https://www.yourdomain.tld`,
+    description: `To Do App with ReactJS`,
+    siteUrl: `https://cs-todo-app.netlify.app/`,
+    image: `/screenshot.jpg`,
   },
   plugins: [
     "gatsby-plugin-sass",
