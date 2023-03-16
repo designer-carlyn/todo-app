@@ -24,4 +24,13 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>ToDo App</title>;
+export const Head = () => (
+  <>
+    <title>Todo App</title>
+    <meta property="og:title" content="Todo App" />
+    <meta
+      property="og:image"
+      content="https://ik.imagekit.io/csdesigner/my_portfolio/recent_works/todo_app_KPFn8Kj0O.webp?updatedAt=1678863890733"
+    />
+  </>
+);
