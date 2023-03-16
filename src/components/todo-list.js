@@ -156,7 +156,9 @@ const TodoList = () => {
 
       <div className="todo-list-setting">
         <div className="todo-count">
-          <small>{todoListCount} Iteme(s) Left</small>
+          <small>
+            {todoListCount} Item{todoListCount > 1 ? "s" : ""} Left
+          </small>
         </div>
         <div className="todo-filter">
           <button
