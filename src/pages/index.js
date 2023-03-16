@@ -29,6 +29,10 @@ export const Head = () => (
     <title>Todo App</title>
     <meta property="og:title" content="Todo App" />
     <meta
+      property="og:description"
+      content="Create your own list of ongoing tasks for the day."
+    />
+    <meta
       property="og:image"
       content="https://ik.imagekit.io/csdesigner/my_portfolio/recent_works/todo_app_KPFn8Kj0O.webp?updatedAt=1678863890733"
     />
