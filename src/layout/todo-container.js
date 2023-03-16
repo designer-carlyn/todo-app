@@ -3,7 +3,6 @@ import {
   CreateTodoContext,
   DispatchTodoContext,
 } from "../context/create-todo-context";
-import initialValue from "../content/todo-iniatal-value.json";
 
 import CreateTodo from "../components/create-todo";
 import TodoList from "../components/todo-list";
@@ -11,7 +10,7 @@ import TodoList from "../components/todo-list";
 import "../scss/layout/todo-container.scss";
 
 const TodoContainer = () => {
-  const [newTodo, dispatch] = useReducer(todoReducer, initialValue);
+  const [newTodo, dispatch] = useReducer(todoReducer, []);
 
   return (
     <div className="todo-app__container">
